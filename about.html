@@ -1,0 +1,589 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CipherShield | Caesar Cipher Encryption Tool</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Animated Background -->
+
+    <div class="background">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Navbar -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <h2>CipherShield</h2>
+
+            </div>
+
+            <ul>
+
+                <li><a href="home.html" class="active">Home</a></li>
+
+                <li><a href="about.html">About</a></li>
+
+                <li><a href="tips.html">Awareness</a></li>
+
+                <li><a href="thanks.html">Thank You</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <!-- Hero Section -->
+
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <span class="badge">
+
+                <i class="fa-solid fa-lock"></i>
+
+                Cybersecurity Project
+
+            </span>
+
+            <h1>
+
+                Secure Your Messages
+
+                <br>
+
+                With
+
+                <span>Caesar Cipher</span>
+
+            </h1>
+
+            <p>
+
+                CipherShield is a modern encryption tool built to demonstrate
+                the classic Caesar Cipher algorithm. Encrypt and decrypt text
+                instantly while learning the fundamentals of cryptography.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#tool" class="btn1">
+
+                    Start Encrypting
+
+                </a>
+
+                <a href="about.html" class="btn2">
+
+                    Learn More
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+
+            <div class="glass-card">
+
+                <i class="fa-solid fa-user-secret"></i>
+
+                <h2>Data Protected</h2>
+
+                <p>
+
+                    Encrypt messages in seconds with a classic
+                    substitution cipher.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Features -->
+
+    <section class="features">
+
+        <h2>
+
+            Why Choose CipherShield?
+
+        </h2>
+
+        <div class="feature-container">
+
+            <div class="feature-box">
+
+                <i class="fa-solid fa-lock"></i>
+
+                <h3>Encryption</h3>
+
+                <p>
+
+                    Convert plain text into encrypted messages
+                    using a customizable shift key.
+
+                </p>
+
+            </div>
+
+            <div class="feature-box">
+
+                <i class="fa-solid fa-unlock"></i>
+
+                <h3>Decryption</h3>
+
+                <p>
+
+                    Instantly recover encrypted messages
+                    with the correct shift value.
+
+                </p>
+
+            </div>
+
+            <div class="feature-box">
+
+                <i class="fa-solid fa-bolt"></i>
+
+                <h3>Fast</h3>
+
+                <p>
+
+                    Everything runs directly in your browser.
+                    No installation required.
+
+                </p>
+
+            </div>
+
+            <div class="feature-box">
+
+                <i class="fa-solid fa-graduation-cap"></i>
+
+                <h3>Educational</h3>
+
+                <p>
+
+                    Learn the basics of classical cryptography
+                    in an interactive way.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+        <!-- ========================= -->
+    <!-- Caesar Cipher Tool -->
+    <!-- ========================= -->
+
+    <section class="tool-section" id="tool">
+
+        <div class="tool-title">
+
+            <span>🔐 Interactive Encryption Tool</span>
+
+            <h2>Caesar Cipher Encrypt & Decrypt</h2>
+
+            <p>
+                Enter your message, choose a shift value, and encrypt or decrypt
+                your text instantly.
+            </p>
+
+        </div>
+
+        <div class="tool-card">
+
+            <!-- Left Side -->
+
+            <div class="left-panel">
+
+                <label>Enter Your Message</label>
+
+                <textarea
+                    id="inputText"
+                    placeholder="Type your secret message here..."
+                ></textarea>
+
+                <div class="counter">
+
+                    <span id="charCount">0 Characters</span>
+
+                </div>
+
+                <label>Shift Value</label>
+
+                <input
+                    type="range"
+                    min="1"
+                    max="25"
+                    value="3"
+                    id="shiftRange"
+                >
+
+                <div class="shift-value">
+
+                    Shift :
+                    <span id="shiftValue">3</span>
+
+                </div>
+
+                <div class="button-group">
+
+                    <button id="encryptBtn">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        Encrypt
+
+                    </button>
+
+                    <button id="decryptBtn">
+
+                        <i class="fa-solid fa-unlock"></i>
+
+                        Decrypt
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Right Side -->
+
+            <div class="right-panel">
+
+                <h3>
+
+                    <i class="fa-solid fa-file-lines"></i>
+
+                    Output
+
+                </h3>
+
+                <textarea
+                    id="outputText"
+                    readonly
+                    placeholder="Your encrypted message will appear here..."
+                ></textarea>
+
+                <div class="button-group">
+
+                    <button id="copyBtn">
+
+                        <i class="fa-solid fa-copy"></i>
+
+                        Copy
+
+                    </button>
+
+                    <button id="clearBtn">
+
+                        <i class="fa-solid fa-trash"></i>
+
+                        Clear
+
+                    </button>
+
+                </div>
+
+                <div class="status-box">
+
+                    <div class="status-item">
+
+                        <h4>Status</h4>
+
+                        <p id="status">
+
+                            Waiting...
+
+                        </p>
+
+                    </div>
+
+                    <div class="status-item">
+
+                        <h4>Algorithm</h4>
+
+                        <p>
+
+                            Caesar Cipher
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Information Cards -->
+    <!-- ========================= -->
+
+    <section class="info-section">
+
+        <h2>Why Encryption Matters?</h2>
+
+        <div class="info-container">
+
+            <div class="info-card">
+
+                <i class="fa-solid fa-user-shield"></i>
+
+                <h3>Privacy</h3>
+
+                <p>
+
+                    Encryption helps keep personal messages
+                    private from unauthorized users.
+
+                </p>
+
+            </div>
+
+            <div class="info-card">
+
+                <i class="fa-solid fa-network-wired"></i>
+
+                <h3>Secure Communication</h3>
+
+                <p>
+
+                    Many modern applications use encryption
+                    to protect online communication.
+
+                </p>
+
+            </div>
+
+            <div class="info-card">
+
+                <i class="fa-solid fa-database"></i>
+
+                <h3>Data Protection</h3>
+
+                <p>
+
+                    Sensitive information becomes unreadable
+                    without the correct key.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Recent Activity -->
+    <!-- ========================= -->
+
+    <section class="history-section">
+
+        <h2>
+
+            Recent Activity
+
+        </h2>
+
+        <div class="history-card">
+
+            <ul id="historyList">
+
+                <li>
+
+                    No activity yet.
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+        <!-- ========================= -->
+    <!-- Call To Action -->
+    <!-- ========================= -->
+
+    <section class="cta">
+
+        <div class="cta-box">
+
+            <h2>Ready to Explore Classical Cryptography?</h2>
+
+            <p>
+                CipherShield is designed to help students understand the basics
+                of encryption and cybersecurity through a simple yet interactive
+                Caesar Cipher tool.
+            </p>
+
+            <div class="cta-buttons">
+
+                <a href="#tool" class="btn1">
+
+                    Encrypt Now
+
+                </a>
+
+                <a href="about.html" class="btn2">
+
+                    Learn More
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- Footer -->
+    <!-- ========================= -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-logo">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <h2>CipherShield</h2>
+
+                <p>
+
+                    Caesar Cipher Encryption Tool
+
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h3>Quick Links</h3>
+
+                <a href="home.html">Home</a>
+
+                <a href="about.html">About</a>
+
+                <a href="tips.html">Awareness</a>
+
+                <a href="thanks.html">Thank You</a>
+
+            </div>
+
+            <div class="footer-contact">
+
+                <h3>Project Information</h3>
+
+                <p>
+
+                    Educational Cybersecurity Project
+
+                </p>
+
+                <p>
+
+                    Built using HTML, CSS & JavaScript
+
+                </p>
+
+                <p>
+
+                    Caesar Cipher Demonstration
+
+                </p>
+
+            </div>
+
+            <div class="footer-social">
+
+                <h3>Follow Us</h3>
+
+                <div class="social-icons">
+
+                    <a href="#"><i class="fab fa-github"></i></a>
+
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+
+                © 2026 CipherShield |
+                Designed for Educational Purposes |
+                Learn • Encrypt • Protect
+
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- JavaScript -->
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
